@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Tire Size Converter" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="20dp" >
+
+        <RadioButton
+            android:id="@+id/rb_metric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Metric" 
+            android:onClick="onRadioButtonClicked"/>/>
+
+        <RadioButton
+            android:id="@+id/rb_inches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inches" 
+            android:onClick="onRadioButtonClicked"/>/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvDesignation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_below="@+id/radioGroup1"
+        android:layout_marginTop="34dp"
+        android:text="Metric" />
+
+    <EditText
+        android:id="@+id/etHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDesignation"
+        android:layout_marginTop="19dp"
+        android:layout_toRightOf="@+id/radioGroup1"
+        android:ems="10"
+        android:hint="225"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/etWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etHeight"
+        android:layout_alignRight="@+id/etHeight"
+        android:layout_below="@+id/etHeight"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="65"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etRim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etHeight"
+        android:layout_below="@+id/etWidth"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="15"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/tvHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etHeight"
+        android:layout_alignBottom="@+id/etHeight"
+        android:layout_toLeftOf="@+id/etWidth"
+        android:text="P" />
+
+    <TextView
+        android:id="@+id/tvWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/etWidth"
+        android:layout_alignRight="@+id/tvHeight"
+        android:text="/" />
+
+    <TextView
+        android:id="@+id/tvRim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etRim"
+        android:layout_alignBottom="@+id/etRim"
+        android:layout_alignRight="@+id/tvWidth"
+        android:text="R" />
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/etHeight"
+        android:layout_alignTop="@+id/radioGroup1"
+        android:layout_marginRight="23dp"
+        android:text="Calculate" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDesignation"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/etRim"
+        android:layout_below="@+id/etRim"
+        android:layout_marginTop="31dp" />
+
+</RelativeLayout>
